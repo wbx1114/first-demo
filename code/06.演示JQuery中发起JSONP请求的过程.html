@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+  <button id="btnJSONP">发起JSONP数据请求</button>
+
+  <script>
+    // 数据接口：http://www.liulongbin.top:3006/api/jsonp
+    $(function () {
+      // 发起jsonp请求
+   $("#btnJSONP").click(function(){
+    $.ajax({
+        url: 'http://www.liulongbin.top:3006/api/jsonp?adress=杭州&location=时代山',
+        // 代表我们要发起jsonp请求
+        dataType: 'jsonp',
+        success: function (res) {
+          console.log(res);
+        }
+      })
+   })
+    })
+  </script>
+</body>
+
+</html>
